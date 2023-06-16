@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- javascript -->
+    <script>
+        // 변수 : 데이터를 저장할 수 있는 공간
+        // 변수 선언 키워드 : var, let, const
+        // 변수 특징
+        // - 데이터를 저장했을 때 자료형이 결정된다.
+        // - 선언만 했을 경우, 자료형은 undefined 이다.
+        // 변수 선언 
+        var num;
+
+        // 변수 초기화 -> 자료형이 결정됨
+        num = 10;
+
+        //var의 특징 
+        // - 중복 선언이 가능 -> 오류를 일으킬 가능성이 있음
+        // - 변수 호이스팅(끌어올림)
+        var num = 15;
+
+
+        let num1 = 20; 
+
+        //const의 특징
+        // - 중복선언 불가
+        // - 새로운 값으로 변경이 불가능
+        // - 객체를 정의할 때 사용
+
+        const num2 = 50;
+
+
+        //자료형
+        //1. 기본타입 : string, number, boolean, null, undefined
+        // null vs undefined의 차이
+        // - null : 데이터가 비어있다는 의미 + object 타입+ 저장공간 존재
+        // - undefined : 데이터가 비어있다는 의미 + 자료형 없음 + 저장공간 없음
+        //2. 참조타입 : array, object etc..
+
+
+        let msg ="" //''
+        let number = 15;
+        let number2 = 3.14 ;
+        let isChecked = true; //false
+        let nullValue = null;
+        let emptyValue ;
+
+        //변수 출력, 자료형 확인
+        console.log(msg,typeof(msg));
+        console.log(nullValue, typeof(nullValue));
+        console.log(emptyValue, typeof(emptyValue));
+    </script>
+</body>
+</html>

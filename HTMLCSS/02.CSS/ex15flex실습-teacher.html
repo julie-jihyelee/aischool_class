@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        .box0{
+            /* box1~3을 flex 배치 */
+            display:flex;
+            /* 방향 설정 */
+            flex-direction: row;
+            /* 정렬하기 */
+            justify-content: center;
+            height:100px;
+            background-color: whitesmoke;
+
+        }
+        .box1{
+            flex-basis: 12%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box2{
+            /* item일 때 필요한 속성 */
+            flex-basis: 70%; 
+            /* container일 때 필요한 속성 */
+            display: flex;
+            flex-direction: row; /*생략가능(기본값)*/
+            /* a태그들이 수평을 기준으로 가운데, 수직을 기준으로 가운데 정렬 */
+            justify-content: center;
+            align-items: center;
+        }
+        .box3{
+            flex-basis: 15%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a{
+            text-decoration: None;
+            color: black;
+            font-size: 20px;
+            margin: 25px;
+        }
+
+        /* box2에 있는 a태그에 마우스를 올렸을 때 */
+        .box2>a:hover{
+            background-color: black;
+            color: white;
+            margin: 15px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box0">
+        <div class="box1">
+            <h1>SMHRD</h1>
+        </div>
+        <div class="box2">
+            <a href="#">메뉴</a>
+            <a href="#">베스트</a>
+            <a href="#">뉴스</a>
+        </div>
+        <div class="box3">
+            <a href="#">로그인</a>
+            <a href="#">회원가입</a>
+        </div>
+    </div>
+</body>
+</html>

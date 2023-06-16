@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            width: 200px;
+            height: 600px;
+            background-color: lightgray;
+            /* (Position값은 static을 제외한 나머지)부모 요소에 position속성이 정의되어있는 경우, 자식요소가 움직이는 위치의 기준은 부모요소이다. 
+            */
+            position: relative;
+            /* 부모요소를 벗어났을 때 넘어간 영역을 숨겨주는 속성 */
+            overflow: hidden;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .child1{
+            background-color: #ff4949;
+            /* absolute : 상위 문서를 기준으로 움직이는 속성*/
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        
+        .child2{
+            background-color: #f9ca24;
+        }
+        
+        .child3{
+            background-color: #0984e3;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div class="box child1"></div>
+        <div class="box child2"></div>
+        <div class="box child3"></div>
+    </div>
+
+    </div>
+</body>
+</html>
+

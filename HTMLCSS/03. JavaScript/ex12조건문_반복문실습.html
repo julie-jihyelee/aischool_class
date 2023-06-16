@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpDown Game</title>
+</head>
+<body>
+    <!-- Javascript -->
+    <script>
+        //실습문제) UpDown 프로그램 구현하기
+        // 1. 랜덤 숫자를 생성한다. (1부터 50사이의 랜덤숫자 생성)
+        // 2. 사용자로부터 숫자를 입력받는다.
+        // 3. 입력받은 숫자와 랜덤숫자를 비교한다.
+        // 4-1. 두 수가 같은 경우 : 콘솔창으로 "정답입니다!" 출력
+        // 4-2. 입력한 숫자가 클 경우 : "입력한 숫자보다 작은 수 입니다." 출력
+        // 4-3. 입력한 숫자가 작은 경우 : "입력한 숫자보다 큰 수 입니다." 출력
+        
+        // Math.random(); 
+        // 0~1까지의 실수형태의 랜덤 숫자가 나온다.
+
+        let randomNum = parseInt(Math.random()*50)+1;
+        console.log(`생성된 숫자 : ${randomNum}`);
+
+        let count = 0;
+
+        while(true){
+            let num = parseInt(prompt("숫자를 입력하세요."));
+            if(randomNum===num){
+                console.log("와우! 대단해요!!!! 정답입니다!😍");
+                console.log("시도 횟수 : "+count);
+                break;
+            }else if(randomNum > num){ //컴퓨터가 생성한 숫자가 작은 경우
+                alert("입력한 숫자보다 큰 수 입니다.");
+                count += 1;
+            }else if(randomNum < num){ //컴퓨터가 생성한 숫자가 큰 경우
+                alert("입력한 숫자보다 작은 수 입니다.");
+                count += 1;
+            };
+        }
+
+
+        
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

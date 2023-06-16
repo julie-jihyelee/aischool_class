@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height:100px;
+        }
+
+        
+        .box1{
+            display: flex;
+            flex-basis:10%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+          
+        }
+        .box2{
+            display: flex;
+            flex-basis:70%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+         
+            
+        }
+        .box3{
+            display: flex;
+            flex-basis:15%;
+            flex-direction: row;
+            justify-content: center;
+           
+        }
+
+        a{
+            text-decoration: None;
+
+        }
+
+        .tab>a:hover{
+            color: white;
+
+        }
+
+        .tab{
+            width: 100px;
+            text-align: center;
+            
+        }
+
+        .tab:hover{
+            background-color: black;
+                      
+        }
+        .link{
+            width:100px;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <h1>SMHRD</h1>
+        </div>
+        <div class="box2">
+            <div class="tab"><a href="#">Menu</a></div>
+            <div class="tab"><a href="#">Best</a></div>
+            <div class="tab"><a href="#">Event</a></div>
+        </div>
+        <div class="box3">
+            <div class="link"><a href="#">로그인</a></div>
+            <div class="link"><a href="#">회원가입</a></div>
+        </div>
+    </div>
+</body>
+</html>

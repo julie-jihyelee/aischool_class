@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array - Test1</title>
+</head>
+
+<body>
+    <!-- Javascript -->
+    <script>
+        let fruits = ["apple", "avocado", "banana", "blueberry", "cherry", "dragon fruit",
+            "fig", "grape", "kiwi", "lime", "mango", "orange", "oriental melon", "pear",
+            "peach", "pineapple", "shine muscat", "strawberry", "tomato",
+            "water melon", "yuja"];
+
+
+        //1) fruits의 마지막 아이템 'yuja'삭제
+        fruits.pop();
+        console.log(fruits);
+
+        //2) fruit에 'grapefruit' 추가
+        // fruits.push('grapefruit');
+        fruits[fruits.length] = 'grapefruit';
+        console.log(fruits);
+
+        //3) fruits에 'cherry tomato', 'pine nut', 'korean blackberry'추가
+        
+        let newFruits = ['cherry tomato','pine nut', 'korean blackberry']
+        
+        for(let i = 0; i < newFruits.length; i++){
+            fruits.push(newFruits[i]);
+        }
+
+      
+
+        // fruits.push('cherry tomato','pine nut', 'korean blackberry');
+        // (설명 중)..items : 가변길이의 변수를 의미 
+
+        // fruits[fruits.length] = 'cherry tomato';
+        // fruits[fruits.length] = 'pine nut';
+        // fruits[fruits.length] = 'korean blackberry';
+        
+        console.log(fruits);
+        
+        //4) fruits에 'orange' 확인
+        console.log(fruits.includes('orange'));
+
+        //5)  fruits에 'kiwi' 확인
+        console.log(fruits.includes('kiwi'));
+
+        //6) fruits에 'water melon' -> 'melon' 변경
+        console.log(fruits.indexOf('water melon'));
+        fruits.splice(19,1,'melon');
+        console.log(fruits);
+
+        //7) fruits에 'lime'부터 3개의 아이템을 기존의 배열에서 삭제하기
+        console.log(fruits.indexOf('lime'));
+        fruits.splice(9,3);
+        console.log(fruits);
+
+        //8) fruits에 'shine muscat'이후 값 제거
+        console.log(fruits.indexOf('shine muscat'));
+        fruits.splice(13);
+        // splice(삭제할 위치) : 이후 모든 데이터를 삭제 
+        console.log(fruits);
+
+        //9) p로 시작되는 아이템인 'pear'부터 'pineapple'까지 가져와 새로운 배열에 저장
+        console.log(fruits.indexOf('pear'));
+        console.log(fruits.indexOf('pineapple'));
+        
+        let array = fruits.slice(10,13);
+        console.log(array);
+        // 배열변수.slice(시작 인덱스, 끝 인덱스) : 배열 내 데이터를 잘라낸 후 새로운 배열로 반환해주는 기능 
+
+        let array1 = [];
+        for(let i = fruits.indexOf('pear'); i <= fruits.indexOf('pinapple'); i++){
+            array1.push(fruits[i]);
+            console.log(array1);
+        }
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

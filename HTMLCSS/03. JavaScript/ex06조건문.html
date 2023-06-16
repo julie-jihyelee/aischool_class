@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습-점수계산기</title>
+</head>
+<body>
+    <!-- JavaScript -->
+    <script>
+        // else if문
+        // if(조건){
+        //     실행문;
+        // }else if(조건){
+        //     실행문;
+        // }else if(조건){
+        //     실행문;
+        // }else{
+        //     실행문;
+        // }
+
+        //실습문제) 국어, 영어, 수학 점수를 입력한 후 평균과 학점을 출력하는 코드를 구현하시오.
+        // 90점 이상 : A
+        // 80점 이상 : B
+        // 70점 이상 : C
+        // 이 외 : F
+
+        let korean = parseInt(prompt("국어 점수를 입력하시오."));
+        let english = parseInt(prompt("영어 점수를 입력하시오."));
+        let math = parseInt(prompt("수학 점수를 입력하시오."));
+
+        let add = korean + english + math ;
+        let avg = (add/3);
+
+        let grade = null;
+
+
+        if(avg >= 90){
+            grade = "A";
+        }else if(avg >= 80){
+            grade = "B";
+        }else if(avg >= 70){
+            grade = "C";
+        }else{
+            grade = "F";
+        }
+
+        console.log("당신의 평균은 "+avg+"이고, 학점은 "+grade+"입니다.");
+
+        // 템플릿 문자열 : 문자열 데이터 안에 변수를 넣는 방식
+        // 문자열 사이에 ${변수명}형태로 추가
+        console.log(`당신의 평균은 ${avg}이고, 학점은 ${grade}입니다.`);
+
+
+    </script>
+</body>
+</html>

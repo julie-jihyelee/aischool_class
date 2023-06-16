@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h3 {
+            color: rgb(35, 138, 197);
+        }
+        
+        div {
+            display: inline-block;
+            width: 800px;
+            width: 800px;
+            padding: 40px;
+            border: 1px solide rgb(232, 243, 247);
+            background-color: rgb(0, 0, 0);
+            
+            border-radius: 50px;
+
+        }
+
+        span{
+            color: black;
+        }
+
+        span:hover{
+            color: white;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 50%;
+            border: 3px solid 3gray;
+            background-color: rgb(167, 233, 253);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Javascript -->
+    <script>
+
+        //실습문제 2)
+        document.write("<h1>🤓3의 배수 찾기🔎</h1>")
+
+        let num = prompt("몇 까지 3의 배수를 찾을까요?")
+        let count = 0;
+        document.write("<div>")
+
+        //0~입력된 수까지 반복
+        if (num !== null) {
+            for (let i = 1; i <= parseInt(num); i++) {
+                if (i % 3 === 0) {
+                    document.write(`<span>${i}, </span>`); //결과값 출력
+                    count += 1; //카운트
+                }
+            }
+        }
+        document.write(`<br/><br/><h3>${num}까지 3의 배수의 개수 : ${count}</h3>`)
+        document.write("</div>")
+
+
+        // 실습문제 1)
+        document.write("<h1>4의 배수일까 아닐까</h1>")
+        let num1 = parseInt(prompt("숫자를 입력하시오."));
+
+
+        if (num1 !== null) {
+            if (num1 % 4 === 0) {
+                document.write(`${num1}은 4의 배수입니다.`);
+            } else {
+                document.write(`${num1}은 4의 배수가 아닙니다.`);
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

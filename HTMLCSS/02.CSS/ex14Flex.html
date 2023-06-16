@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Flex : 레이아웃 배치 전용 기능
+            - 움직일 대상을 감싼 요소 : container
+            - 움직일 대상 : item 
+         */
+        .container{
+            /* 1.Flex 설정 */
+            display: Flex;
+            /* 2. 배치 방향 설정 
+            1) row : 메인 - 수평 / 서브- 수직
+            2) column : 메인 - 수직 / 서브 - 수평
+            */
+            flex-direction: row;
+            /* 3. 정렬하기
+            1) 수평선을 기준으로 정렬 : justify-content:start/end/center
+            2) 수직선을 기준으로 정렬 : align-items: center*/
+            justify-content: center;
+            /* align-items: center; */
+
+            /* 4. 줄넘김 처리 */
+            flex-wrap: wrap;
+        }
+        .item{
+            background-color: beige;
+            width: 300px;
+            height: 300px;
+            border : 1px solid gray;
+            flex-basis: 10%;
+        }
+        
+        #center{
+            /* 5. flex-basis : 아이템의 기본 크기를 설정하는 속성 
+            - %로 비율
+            - 100%로 딱 떨어지면 wrap속성이 있을때 개행됨... */
+
+            flex-basis: 70%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item" id="center"></div>
+        <div class="item"></div>
+
+    </div>
+</body>
+</html>

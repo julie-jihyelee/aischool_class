@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 스타일 태그 안쪽으로 css가 작성된다!
+            디자인 : 무엇을? 어떻게?
+                     선택자  선언
+                선택자{ 속성: 값; ---> 선언 } */
+        /* font-family : 글꼴 (최대한 유사한 스타일을 가진 글꼴)
+            font-size : 글씨의 크기 16px
+            font-weight : 글씨의 굵기 - bold(700) 100~900
+            font-style : 
+            */
+
+        /* web-font 사용하기 : 눈누
+         */
+        p{
+            color:hotpink;
+            font-family: '메이플스토리체','궁서체';
+            font-size: 50px ;
+            font-weight: 100;
+            font-style: italic ;
+            
+        }
+        @font-face {
+        font-family: 'SBAggroB';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+        h1{
+            color:orange;
+            font-family: 'SBAggroB';
+        }
+        h2{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <p>나는 이지혜다</p>
+    <h1>오늘은 즐거운 목요일</h1>
+    <h2>내일은 즐거운 금요일</h2>
+    
+</body>
+</html>

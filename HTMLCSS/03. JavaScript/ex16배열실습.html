@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array - Test2</title>
+</head>
+
+<body>
+    <!-- Javascript -->
+    <script>
+        //10개의 랜덤숫자를 가진 배열을 생성하기 (숫자범위 : 1~100)
+
+        let arr = [];
+
+        // 랜덤숫자를 생성한 후 배열에 저장!
+        // 주어진 범위의 최대값을 곱함 -> parseInt (정수형) + 1
+
+        // 중복된 숫자를 제외한 랜덤숫자가 저장되도록 구현해보기
+        // * 이중 for문 활용
+        // for (let i = 0; i < 10; i++) {
+        //     arr.push(parseInt(Math.random() * 100) + 1);
+
+
+
+        //     //중복된 숫자를 체크하는 반복문
+        //     for(let j = 0 ; j < i; j++){
+        //         if(arr[i] === arr[j]){
+        //             i -= 1; // 중복된 경우, 인덱스를 -1 감소
+        //             break;
+        //         }
+        //     }
+
+        // }
+
+        //문제) 배열에 저장된 숫자 중에서 가장 큰 숫자만 출력해보기
+        // * 최대값과 비교할 숫자를 하나 지정해야 한다.
+        //   지정된 숫자를 모든 배열의 숫자들과 비교해서 큰 수를 찾아야한다. 
+
+        // 1) Math.max
+
+        for(let i = 0; i <10; i++){
+            arr.push(parseInt(Math.random() * 100) + 1);
+        }
+        console.log(arr);
+        console.log(Math.max.apply(null,arr));
+
+        // 2) sort
+        console.log(arr);
+        arr.sort(function(a,b){
+            return a-b;
+        });
+        console.log(arr);
+        console.log();
+        
+
+        // 3) 반복문
+        let arr2 = [];
+        let max = [];
+       
+        for(let i = 0; i <10; i++){
+            arr2.push(parseInt(Math.random() * 100) + 1);
+
+            if (i == 0) {
+                max.push(arr2[i]);
+            }else{
+                if(max[0] < arr2[i]){
+                    max.splice(0,1,arr2[i]);
+                }
+            }
+        }
+        console.log(arr2);
+        console.log(max[0]);
+
+        // 선생님 풀이
+ 
+        let arr3 = [];
+        for(let i = 0; i <10; i++){
+            arr3.push(parseInt(Math.random() * 100) + 1);
+        }
+
+        let maxNum = arr[0];
+        for(let i = 1; i < arr3.length; i++)
+            if(maxNum<arr3[i]){
+                maxNum = arr3[i]; // 값 초기화
+            }
+
+        console.log(arr3)
+        console.log(maxNum)
+
+
+
+
+
+
+
+
+        //문제) 10개의 랜덤숫자가 저장된 배열 데이터 중 홀수만 출력해보기
+
+        let num = [];
+        let count = 0;
+        for (let i = 0; i < 10; i++) {
+            if (arr[i] % 2 != 0) {
+                num.push(arr[i]);
+                count++;
+            }
+        }
+        console.log(num);
+        console.log(count);
+
+        // console.log 개행 시, escape문자로!!
+        console.log(`랜덤 배열 : ${arr} \n홀수 : ${num} \n홀수의 개수는 : ${count}`);
+        let s = arr.concat(num);
+        console.log(s);
+        let str = 'skduhf'
+
+    </script>
+</body>
+
+</html>

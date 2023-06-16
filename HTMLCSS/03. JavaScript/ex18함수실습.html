@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function-Test1</title>
+</head>
+<body>
+    <!-- Javascript -->
+
+
+    <script>
+        // 문제 ) 3개의 숫자를 입력받은 후, 더한 결과를 출력하는 함수 구현해보기
+        // 함수명 : addNumber
+        // addNumber(5,8,20) --> 콘솔창에 "모두 더한 결과 : 33"
+
+
+        function addNumber(number1, number2){
+
+            // 가독성에 따라 다른 방법으로 구현할 수 있음
+            // 1) 
+            let sum = number1+number2
+            console.log(`${number1}+${num2} : ${sum}`)
+
+            //2)
+            // console.log(`모두 더한 결과 : ${number1+number2+number3}`)
+        }
+
+        addNumber(5,8,20);
+        addNumber(7,435,203);
+
+        // 문제 ) 빼기, 곱하기, 나누기를 연산해주는 함수 구현해보기
+        // ex) minusNumber(5,2) --> 3
+        // mulNumber(5,2) --> 10
+        // divNumber(5,2) --> 2.5
+        
+
+        function minusNumber(num1, num2){
+            console.log(`${num1}-${num2} : ${num1-num2}`)
+           
+        }
+
+        function mulNumber(num1,num2){
+            console.log(`${num1} x ${num2} : ${num1*num2}`);
+        }
+
+        function divNumber(num1,num2){
+            console.log(`${num1} / ${num2}: ${num1/num2}`);
+        }
+
+
+        minusNumber(5,2);
+        mulNumber(5,2);
+        divNumber(5,2);
+
+
+        // 계산기 프로그램 만들기
+        // 1. 두 수를 입력받는다.
+        // 2. 어떤 연산을 할 것인지 선택한다.
+        // 3. 선택한 연산에 따른 결과가 출력된다.
+        
+        let inputNum1 = parseInt(prompt('첫 번째 숫자 입력 :'));
+        let choice = prompt('해당하는 번호를 입력해주세요. \n 1.더하기 2.빼기 3.곱하기 4.나누기');
+        let inputNum2 = parseInt(prompt('두 번째 숫자 입력 :'));
+4
+        if(choice==='1'){
+            addNumber(inputNum1, inputNum2);
+        } else if(choice==='2'){
+            minusNumber(inputNum1, inputNum2);
+        } else if(choice==='3'){
+            mulNumber(inputNum1, inputNum2);
+        } else if(choice==='4'){
+            divNumber(inputNum1, inputNum2);
+        } else{
+            alert('해당 사항이 없는 연산입니다. 다시 입력해주세요.')
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

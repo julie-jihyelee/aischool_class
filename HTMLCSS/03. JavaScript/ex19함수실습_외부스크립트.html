@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function - Calculator</title>
+</head>
+
+<body>
+  <!-- Javascript 파일을 읽어오는 방법 -->
+  <!-- script태그에 scr 속성이 있는 경우에는 자바스크립트 코드를 작성할 수는 있지만 동작이 되지 않음. -->
+
+  <script src="./js/ex19함수실습_반환.js"></script>
+
+
+  <script>
+    // 계산기 프로그램 만들기
+    // 1. 두 수를 입력받는다.123
+    // 2. 어떤 연산을 할 것인지 선택한다.
+    // 3. 선택한 연산에 따른 결과가 출력된다.
+    let inputNum1 = parseInt(prompt('첫 번째 숫자 입력 :'));
+    let choice = parseInt(prompt('해당하는 번호를 입력해주세요. \n 1.더하기 2.빼기 3.곱하기 4.나누기'));
+    let inputNum2 = parseInt(prompt('두 번째 숫자 입력 :'));
+
+    function plus(num1, num2) {
+      return num1 + num2;
+    }
+
+    function minus(num1, num2) {
+      return num1 - num2;
+    }
+
+    function multi(num1, num2) {
+      return num1 * num2;
+    }
+
+    function divide(num1, num2) {
+      return num1 / num2;
+    }
+
+    function calculator(inputNum1, choice, inputNum2) {
+      //switch문으로 작성할 수도 있음
+      let result = 0;
+
+      if (choice === 1) {
+        result = plus(inputNum1, inputNum2);
+      } else if (choice === 2) {
+        12
+        result = minus(inputNum1, inputNum2);
+      } else if (choice === 3) {
+        result = multi(inputNum1, inputNum2);
+      } else if (choice === 4) {
+        result = divide(inputNum1, inputNum2);
+      } else {
+        alert('값이 제대로 입력되지 않았습니다. 다시 한 번 시도해주세요.')
+      }
+
+      console.log(`입력하신 값의 정답은 : ${result} 입니다.`);
+    }
+
+    calculator(inputNum1, choice, inputNum2);
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Javascript -->
+    <script>
+        //연산자
+        //1. 산술연산자 : +, -, * , /(나누기), %(나머지)
+        console.log(5+5);
+        console.log(5-1);
+        console.log(5*5);
+        console.log(5/2);
+
+        // 실수 -> 정수로 변환
+        console.log(parseInt(5/2));
+        console.log(5%2);
+
+        //변수 num값 중에서 백의 자리 이하를 버리는 코드를 작성하시오.
+        // ex) 312 -> 300, 456 -> 400
+        let num = 312;
+        console.log(parseInt(num/100)*100);
+
+        //2. 증감연산자 : ++, -- 
+        // - 연산자를 앞 또는 뒤에 작성했을 때 연산되는 순서가 달라진다.
+        // num2++ : 변수를 먼저 사용한 후 + 1 반영 => num2 + 1 or num2 +=1
+        // ++num2 : +1을 연산한 다음 변수에 반영
+        let num2 = 0;
+       
+        // num2++; 
+        // ++num2;
+        console.log(num2++);
+        console.log(num2);
+
+        //3. 대입(할당)연산자 : = , +=, -=, *=, /=, %=
+        //4. 비교 연산자 : 
+        // == : 동등연산자
+        // === : 일치연산자
+        // 비교연산자는 숫자데이터와 비교시 자동형변환을 하기 때문에 자료형을 맞춰준 수 비교해야한다.
+        console.log(5==5); //true
+        console.log(5==10); //false
+        console.log(5=="5"); //true -> 자료형을 숫자로 자동형변환
+        console.log(5==="5"); //false -> 자동형변환을 하지 않는다
+        console.log(5>parseInt("3"));
+
+        //5. 논리연산자 : &&(AND), ||(OR), !(NOT)
+        // &&연산자 : 두 비교식이 모두 True일 때 결과가 True
+        console.log(5>3 && 2>1); //true
+        console.log(5>3 && 2<1); //false
+
+        // 먼저나온 비교식의 결과가 false인 경우, 뒤에 나오는 비교식을 판단하지 않는다.  
+        console.log(5<3 && 2>1); //false
+
+        // ||연산자 : 둘 중 하나의 비교식이 True일 때, 결과는 True
+        console.log(5>3 || 2<1); //true
+
+        // !연산자 : 결과값을 반대로 변환하는 연산자
+        // -비교식을 정의할 때 개발자의 판단에 따라 달라질 수 있음
+        // 일치하는 비교식을 만들 것인지
+        // 불일치하는 비교식을 만들 것인지
+        console.log(5>3);
+        console.log(!(5>3)); //false
+
+        // 6. 삼항연산자 : 비교식 ? true 일 때 : false일 때
+        // 간단한 비교 시 조건문보다 연산이 빠름
+        // 성인 판별
+
+        let age = 25;
+        let result = (age >= 19) ? "성인입니다":"미성년자입니다.";
+
+        console.log(result);
+
+        //두 숫자의 크기를 비교하여 큰 수를 출력하는 코드를 구현하시오.
+        //삼항연산자 활용
+
+        let n1 = 35;
+        let n2 = 50;
+        let result2 = (n1 > n2) ? n1 : n2 ;
+        // (n1===n2) ? "두 숫자는 같습니다" : (n1>n2) ? n1:n2;
+
+        console.log("두 숫자 중 큰 수는 " + result2 + "입니다");
+
+</script>
+</body>
+</html>

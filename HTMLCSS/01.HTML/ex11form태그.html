@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form 태그
+        1. placehorld : 미리보기 텍스트
+        2. autofocus : 커서를 자동으로 해당 input 태그에
+        3. maxlength : 입력할 수 있는 글자 수 제한
+        4. name : 보내는 곳과 받는 곳에서 해당 정보를 구분하기 위한 key
+        5. value : 해당 정보에 대한 값
+    
+    
+    -->
+
+    <form action="#" method="get">
+        ID : <input type="text" name="userId" autofocus placeholder="ID를 입력하세요"> <br/>
+        PW : <input type="password" name="userPw" maxlength="10" placeholder="비밀번호를 설정하세요(최대10자)"> <br/>
+        주소 : <input type="text" name="userAddr">
+
+        <br/>
+        <br/>
+    
+        <!-- checkbox -->
+        점심으로 먹고 싶은 메뉴는? <br/>
+        
+        <input type="checkbox" name="menu" value="한식"> 한식 <br/>
+        <input type="checkbox" name="menu" value="중식"> 중식 <br/>
+        <input type="checkbox" name="menu" value="양식"> 양식 <br/>
+        <input type="checkbox" name="menu" value="일식"> 일식 <br/>
+        <input type="checkbox" name="menu" value="분식"> 분식 <br/>
+    
+        <br/><br/>
+        성별을 입력하세요
+        <input type="radio" name="gender" value="male"> 남성
+        <input type="radio" name="gender" value="female"> 여성
+
+        <!-- selector -->
+        <br/>
+        <br/>
+        혈액형을 선택하세요
+        <select>
+            <option name="blood type" value="A">A형</option>
+            <option name="blood type" value="B">B형</option>
+            <option name="blood type" value="O">O형</option>
+            <option name="blood type" value="AB">AB형</option>
+        </select>
+        <br/>
+        <br/>
+
+        <!-- text area -->
+
+        <textarea rows="5" cols="30"></textarea>
+        <br/>
+        <br/>
+
+        <!-- 그 외 태그들 -->
+        그 외의 태그들 <br/>
+        <input type="file"> <br/>
+        <input type="color"> <br/>
+        <input type="number"> <br/>
+        <input type="range"> <br/>
+        <input type="date"> <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <input type="submit">        
+        <input type="reset"
+    </form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Javascript -->
+    <script>
+        let arr = ['아이스크림', '크루아상','아메리카노','오일파스타'];
+        document.write('<div>')
+        document.write('<h2> 다음 중 생각나는 음식을 고르시오. </h2>')
+        for(let i = 0; i < arr.length ; i++){
+            document.write(`<p>${arr[i]}</p>`);
+        }
+        document.write('</div>')
+    </script>
+</body>
+</html>

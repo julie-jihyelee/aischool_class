@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- JavaScript -->
+    <script>
+        //실습문제) 두 숫자를 입력한 후, 해당 범위의 숫자를 모두 출력하는 코드를 구현하시오.
+
+        let start = parseInt(prompt("시작 숫자 입력"));
+        let end = parseInt(prompt("마지막 숫자 입력"));
+
+        for(let i = start; i <= end ; i++){
+            console.log(i)
+        }
+
+
+        //실습문제) 순차적으로 출력되는 모든 숫자를 더한 결과를 출력하는 코드를 구현하시오.
+        //예시 : 1~10 출력 -> 55
+
+        let start1 = parseInt(prompt("시작 숫자 입력"));
+        let end1 = parseInt(prompt("마지막 숫자 입력"));
+        let total = 0;
+
+
+
+        for(let i = start1 ; i <= end1 ; i+=1){
+            total += i;
+        }
+        
+        console.log(`${start1}부터 ${end1}까지의 총합은 ${total}이다.`)
+        
+         
+    </script>
+</body>
+</html>

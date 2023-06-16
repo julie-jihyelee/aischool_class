@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            display: inline-block;
+            padding: 0px 25px 25px 25px;
+            margin: 15px;
+            border: 1px solid rgb(245, 245, 245);
+            border-radius : 25px;
+            line-height: 2.3rem;
+           
+        
+        }
+        div h3{
+            text-align: center;
+            font-weight: bold;
+            
+        }
+
+        h1 {
+            text-align: center;
+        }
+        span {
+            color: orange;
+            font-weight : bold;
+        }
+        strong {
+            color: #f6e1dc;
+            font-size: 1.1em;
+            background-color: #f6e1dc;
+            padding: 4px 8px; 
+            border-radius: 30%;
+            text-align: center;
+        }
+
+        strong:hover{
+            color : black;
+        }
+    </style>
+</head>
+<body>
+    
+    <header><h1>🐔🐔 구구단 🐔🐔</h1></header>
+
+    
+    <!-- JavaScript -->
+    <script>
+
+    let i,j ;
+    document.write("<container>")
+    
+    for(i=1;i<10;i++){
+        document.write("<div>");
+        document.write("<h3>"+i+"단</h3>");
+        for(j=1; j<10; j++){
+            document.write(`<span>${i}</span>x<b>${j}</b>=<strong>${i*j}</strong><br/>`);
+        }
+        document.write("</div>");
+    } 
+    document.write("</container>")
+
+    </script>
+</body>
+</html>
