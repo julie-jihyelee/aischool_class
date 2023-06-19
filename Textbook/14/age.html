@@ -6,6 +6,16 @@
     <title>나이 계산하기</title>
 </head>
 <body>
+<!-- Javascript -->
+  <script>
+    let date = new Date();
+    let birthYear = parseInt(prompt('태어난 연도를 입력하세요.'));
+    let currentYear = date.getFullYear();
+    let age = currentYear - birthYear + 1;
+    
+    document.write(`${currentYear}년 현재, <br/> ${birthYear}년에 태어난 사람의 나이는 ${age}세입니다🤓19`)
 
+    
+  </script>
 </body>
 </html>
