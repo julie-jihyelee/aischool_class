@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title> Host Object</title>
+</head>
+<body>
+  <!-- JavaScript -->
+  <script>
+    // 객체 (Object)
+    //  - 여러 속성(Property)을 하나의 변수에 저장할 수 있는 자료형
+    //  - key/Value 구조
+    //    ex) let object = {key:value, key:value,...}
+    //  - 자바스크립트의 객체형 태는 데이터 포맷 중에서 JSON형식과 동일한 구조
+
+    // 사람을 표현할 수 있는 객체를 생성해보기
+    // : 이름(name), 나이(age), 성별(gender)
+    let person ={
+      name  :"이지혜",
+      age : 21 ,
+      gender : "여성",
+      favoriteFood : ['탕수육', '떡볶이', '치킨', '닭꼬치', '삼겹살'],
+      walking : function(){
+        console.log('걷는중');  
+      }
+    }
+
+    // 객체 정보 출력해보기
+    console.log(person);
+    
+    // 객체 정보 중 성별만 출력해보기
+    // 속성에 접근할 때 . 를 이용하면 하나씩 접근이 가능하다.
+    console.log(person.name);
+    console.log(person.age);
+    console.log(person.gender);
+
+    //좋아하는 음식 출력해보기
+    console.log(person.favoriteFood);
+    console.log(person.favoriteFood[3]);
+
+    
+  </script>
+  
+</body>
+</html>

@@ -28,9 +28,9 @@ function divNumber(num1,num2){
 function calculator(inputNum1, choice, inputNum2){
     let result = 0;
     if(choice==='1'){
-        result = addNumber(inputNum1, inputNum2);
         //addNumber는 결과값을 반환해주는 함수이기 때문에 출력을 하려면
         //console.log()함수에 넣어줘야 출력할 수 있다.
+        result = addNumber(inputNum1, inputNum2);
         
     }else if(choice==='2'){
         result =minusNumber(inputNum1, inputNum2);
@@ -45,10 +45,3 @@ function calculator(inputNum1, choice, inputNum2){
     console.log(`두 수의 연산결과 : ${result}`);
 }
 
-
-//1. 입력받을 데이터를 html에 정의
-//2. 
-//3.
-//4.
-//5.
-//6.

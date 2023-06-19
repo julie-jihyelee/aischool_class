@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex20 - function expression</title>
+</head>
+<body>
+  <!-- Javascript -->
+  <script>
+    // 함수표현식
+    // - 익명 함수를 만들어서 변수에 저장하는 형태
+    // - 함수 호이스팅이 일어나지 않는다.
+    // React, Vue와 같은 최신 트렌드의 기술에 많이 사용되는 형태
+
+    // print변수가 호이스팅이 일어나지 않기 때문에 먼저 실행하려고 하면 오류 발생!
+    // Uncaught ReferenceError : Cannot access 'print' befor innitailization/
+    // -> 참고 오류 : 초기화 하기 전에 'print'를 접근할 수 없다는 의미!
+    // print(); 
+
+    // 함수표현식 정의
+    let print = function(){
+      console.log('요즘 날씨가 너무 덥습니다..☀️');
+    }
+    
+    // 함수표현식의 매개변수 정의해보기
+    let print2 = function(name){
+      console.log(`${name}님 환영합니다~!!!!`);
+    }
+
+    // return문을 가진 함수표현식 정의해보기
+    let sum = function(num1,num2){
+      return num1+num2;
+    }
+
+    // 함수표현식으로 정의된 함수를 실행하려면?
+    // 변수명();
+
+    print();
+    print2('가나다');
+
+    // sum함수는 결과를 출력하는 것이 아닌 값을 반환하기 때문에
+    // 출력문 또는 변수에 담아주지 않으면 사용할 수 없다.
+    console.log(sum(4,5));
+
+    let result = sum(19,30);
+    console.log(result);
+
+  </script>
+</body>
+</html>
