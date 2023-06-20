@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text-Dom2</title>
+  <style>
+    body{
+      text-align : center;
+    }
+    button{
+      margin : 20px 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>카운팅 기능 만들기</h1>
+  <div>count: <span id="count">0</span></div>
+  <button>증가</button>
+  <button>감소</button>
+
+  <!-- Javascript -->
+  <script>
+    //선생님 풀이
+    const count = document.getElementById('count');
+    const btn = document.getElementsByTagName('button');
+
+    btn[0].addEventListener('click', ()=>{
+      //span요소의 숫자를 +1 증가하는 로직 구현
+      //연산 결과를 다시 웹 페이지에 출력
+      count.innerText = parseInt(count.innerText)+1;
+    });
+    
+    btn[1].addEventListener('click', ()=>{
+      count.innerText = parseInt(count.innerText)-1;
+    })
+    
+    
+    
+    
+    
+    
+    //내 풀이
+    // const plus = document.getElementById('plus');
+    // const minus = document.getElementById('minus');
+    // const count = document.getElementById('count');
+   
+    // // plus
+    // plus.addEventListener('click',()=>{
+    //   count.innerText ++ ;
+    // })
+    // //minus
+    // minus.addEventListener('click',()=>{
+    //   count.innerText -- ;
+    // }) 
+
+  </script>
+
+
+
+</body>
+</html>

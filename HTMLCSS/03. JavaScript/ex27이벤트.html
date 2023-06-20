@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event</title>
+</head>
+<body>
+
+  <!-- 1. 태그 자체에 이벤트를 적용해보기 
+        - 'on이벤트명' = 자바스크립트 문법;
+        - 이벤트가 발생했을 때 정의된 자바스크립트 코드를 실행
+  
+     >> 권장하는 방법은 아님  
+  -->
+   
+  <button onclick="alert('클릭이벤트 실행!');" >클릭</button>
+  <button id="btn1">버튼1</button>
+  <button id="btn2">버튼2</button>
+
+  <!-- Javasctipt -->
+  <script>
+    // 이벤트(Event)
+    // - 사용자가 브라우저에서 하는 행위
+    //   ex) 마우스를 클릭했을 때, 키보드를 눌렀을 때, 입력칸에 커서를 두었을 때
+
+    //이벤트 핸들러(Event Handler)
+    // - 이벤트가 발생했을 때, 동작하는 함수
+
+    const btn1 = document.getElementById("btn1");
+    const btn2 = document.getElementById("btn2");
+
+    // 2-1. 요소객체에 이벤트 적용해보기
+      btn1.onclick = () => {
+      alert("click이벤트 실행!");
+    }
+    
+    // 2-2. 함수를 이용한 이벤트 적용해보기
+    // btn2.addEventListener(이벤트종류(type=string),함수)
+    // btn2.addEventListener('click',()=>{
+    //   alert("클릭이벤트 실행!")
+    //   ;})
+
+    const executeFunc = ()=>{
+      alert("클릭이벤트 실행!!")
+    }
+    // 실행할 로직이 복잡할 경우애는 아래와 같이 함수 형태로 
+    // 먼저 정의한 다음에 이벤트 핸들러 위치에 함수명만 작성한다. 
+    btn2.addEventListener('click',executeFunc);
+    
+
+    // ()를 붙이지 않는 이유 
+    // 자바스크립트 코드가 실행될 때 함수 호출을 만나면, 무조건 먼저 실행하게 되어있음
+    // 이벤트에 함수를 정의하는 경우, 소괄호를 빼야함
+
+
+
+  </script>
+  
+</body>
+</html>

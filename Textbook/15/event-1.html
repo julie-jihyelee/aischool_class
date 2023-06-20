@@ -7,11 +7,55 @@
 	<link rel="stylesheet" href="css/function.css">
 </head>
 <body>
+  <h1>HTML 태그에 이벤트 적용</h1>
 	<ul>
-		<li><a href="#" onclick="alert('버튼을 클릭했습니다.')">Green</a></li>
-		<li><a href="#" onclick="alert('버튼을 클릭했습니다.')">Orange</a></li>
-		<li><a href="#" onclick="alert('버튼을 클릭했습니다.')">Purple</a></li>
+		<li><a href="#" onclick="alert('초록색을 선택했습니다.')">Green</a></li>
+		<li><a href="#" onclick="alert('주황색을 선택했습니다.')">Orange</a></li>
+		<li><a href="#" onclick="alert('보라색을 선택했습니다.')">Purple</a></li>
 	</ul>		
-	<div id="result"></div>
+	<div id="result1"></div>
+
+  <h1> 함수를 이용한 이벤트 적용</h1>
+  <ul>
+		<li id="green"><a href="#">Green</a></li>
+		<li id="orange"><a href="#">Orange</a></li>
+		<li id="purple"><a href="#">Purple</a></li>
+	</ul>		
+	<div id="result2"></div>
+
+
+
+
+
+  
+  <!-- Javascript -->
+  <script>
+    const green = document.getElementById('green');
+    const orange = document.getElementById('orange');
+    const purple = document.getElementById('purple');
+    const result1 = document.getElementById('result1');
+    const result2 = document.getElementById('result2');
+
+    green.addEventListener('click',()=>{
+      alert('초록색을 선택했습니다.');
+      result2.style.backgroundColor='green';
+    })
+    orange.addEventListener('click',()=>{
+      alert('주황색을 선택했습니다.');
+      result2.style.backgroundColor='orange';
+    })
+    purple.addEventListener('click',()=>{
+      alert('보라색을 선택했습니다.');
+      result2.style.backgroundColor='purple';
+    })
+    
+
+
+
+  </script>
+
+
+
+
 </body>
 </html>  

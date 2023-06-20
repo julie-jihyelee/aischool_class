@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM : Document Object Model</title>
+</head>
+<body>
+  <h1 id="tit">HTML 요소에 접근해보기</h1>
+  <p id="msg">HTML 문서에 있는 정의된 요소들을 제어해보자!</p>
+
+  <!-- JavaScript -->
+  <script>
+
+    // DOM (Document Object Model:문서 객체 모델)
+    // : 웹 문서에 정의된 태그를 Javascript에서 접근할 수 있도록 객체로 변환해주는 모델
+    // HTML 문서 내에 있는 요소를 접근하려면? (요소들의 내용들을 고정적으로 정의하기 위해 const사용)
+    // document : 현재문서
+    // . : 현재문서 내에 있는 속성 또는 함수를 접근
+    // getElementById(): 요소의 id 속성값을 이용해서 요소 객체에 접근 
+
+    const tit =  document.getElementById("tit");
+    console.log(`h1 요소 접근 결과 : ${tit}`);
+    console.log(tit);
+
+    // 접근한 요소의 컨텐츠를 접근하려면?
+    //  요소객체.innerText : 요소의 컨텐츠만을 접근(문자열)
+    //  요소객체.innerHTML : 요소의 컨텐츠+자식요소를 접근(문자열)
+    console.log(tit.innerText);
+    console.log(tit.innerHTML);
+
+    // 접근한 요소의 콘텐츠를 업데이트(초기화)하려면? // 텍스트 내용만
+    // 요소객체.innerText = 수정할 데이터 
+    tit.innerText = "<a href ='https://www.naver.com'>요소 접근에 성공!</a>"
+
+    // 요소의 콘텐츠를 업데이트 할 때 새로운 요소를 반영하고 싶다면? // 태그 포함+텍스트
+    // 요소객체.innerHTML = 요소+데이터 형태
+    tit.innerHTML = "<a href ='https://www.naver.com'>요소 접근에 성공!</a>"
+
+    // a 요소의 글자색을 파란색으로 변경하려면?
+    // HTMLcollection : 유사 배열
+    // 인덱싱으로 특정 객체 접근
+    const aTag = tit.getElementsByTagName('a');
+    console.log(aTag);
+    console.log(aTag[0]);
+
+    //요소객체.style.스타일속성 = "변경할 값";
+    aTag[0].style.color ="darkred";
+    aTag[0].style.textDecoration ="none";
+    aTag[0].style.fontSize="46px";
+
+    //p요소의 객체에 접근한 후, 내용을 변경해보기
+    const pMsg = document.getElementById('msg');
+    pMsg.innerText="접근한 요소의 내용을 변경할거예요!"
+    console.log(pMsg);
+
+
+    //p요소의 컨텐츠 스타일을 변경해보기
+    //글자 크기 : 20px, 테두리 : 2px solid 빨간색 : 
+    pMsg.style.fontSize="20px";
+    pMsg.style.color="red";
+    pMsg.style.border="2px solid red";
+    pMsg.style.borderRadius="10px";
+    pMsg.style.padding="15px 0px"
+    pMsg.style.textAlign = "center";
+
+
+
+  </script>
+</body>
+</html>

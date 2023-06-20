@@ -16,9 +16,16 @@ li {
 	font-size:16px;
 	text-align:center;
 }
-#result {
+#result1 {
 	width:500px;
-	height:300px;
+	height:200px;
+	margin:30px auto;
+	border:2px solid #ccc;
+	border-radius:15px;
+}
+#result2 {
+	width:500px;
+	height:200px;
 	margin:30px auto;
 	border:2px solid #ccc;
 	border-radius:15px;
@@ -27,4 +34,10 @@ p {
 	width:80%;
 	padding:10px;
 	line-height: 2em;
+}
+
+h1{
+  display: inlie-block;
+  margin-top : 50px;
+  text-align : center;
 }

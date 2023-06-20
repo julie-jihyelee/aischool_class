@@ -7,12 +7,30 @@
       h1 {
         border:1px solid black;
         padding:10px;
-        text-align:center;
+        
         background:#eee;
       }
     </style>
   </head>
   <body>    
     <h1>당첨자 발표</h1>
+    <!-- Javascript -->
+    <script>
+      // 1~100까지 무작위 출력
+
+      let memNums = parseInt(prompt('전체 응모자 수 :'));
+      let num = Math.floor((Math.random()*100))+1 ;
+      console.log((num));
+
+      document.write(`전체 응모자 수 : ${memNums} <br> 당첨자 : ${num}`);
+      document.write(``);
+
+
+
+    </script>
+
+
+
+
   </body>
 </html>

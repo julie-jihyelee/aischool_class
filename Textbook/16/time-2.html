@@ -15,7 +15,14 @@
 	<script>
 		var now = new Date();
 		document.write("현재 시각은 " + now.toLocaleString()) ;	// 로컬 형식으로 표시하기
-	</script>
+	
+    let arr = [1,5,4,5,3,2,9];
+    document.write(`<br><br> array = ${arr}, Type = ${typeof(arr)}`);
+
+    let renew = arr.join('');
+    document.write(`<br><br> renew =${renew}, ${typeof(renew)}`);
+    console.log(typeof(renew));
+  
+  </script>
 </body>
 </html>
-

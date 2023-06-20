@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test3 - inputElement</title>
+</head>
+
+<body>
+  <form action="">
+    <input type="text" id="input">
+    <input type="button" id="btn" value="출력">
+  </form>
+  <p id="result"></p>
+
+  <!-- JavaScript -->
+  <script>
+    const input = document.getElementById('input');
+    const btn = document.getElementById('btn');
+    const result = document.getElementById('result');
+
+    // 입력요소의 값을 접근하려면?
+    // -> 입력요소.value
+    // 입력 요소 종류  : input, select, textarea
+    // btn.addEventListener('click',()=>{
+      
+    //   result.innerText = input.value ;
+    //   result.innerHTML = `<h2>${input.value}</h2>`;
+    // })
+
+    // 키보드 이벤트
+    // keyPress, keydown, keyuP
+    
+    input.addEventListener('keyup',()=>{
+      console.log('키보드 이벤트 동작!');
+      console.log(input.value);
+      result.innerHTML = `<h2>${input.value}</h2>`;
+    })
+
+
+  </script>
+</body>
+
+</html>

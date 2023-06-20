@@ -6,6 +6,23 @@
 	<title>연습문제 2</title>
 </head>
 <body>
-	
+	<script>
+    let a = parseInt(prompt('비교할 첫 번째 숫자 : '));
+    let b = parseInt(prompt('비교할 두 번째 숫자 : '));
+
+    function compareNums (a,b) {
+      if(a>b){
+        alert(`${a}(이)가 ${b}보다 큽니다.`)
+      }else if(a<b){
+        alert(`${b}(이)가 ${a}보다 큽니다.`)
+      }else if(a===b){
+        alert(`${a}와(과) ${b}와(과) 같습니다.`)
+      }
+    }
+
+    compareNums(a,b);
+
+
+  </script>
 </body>
 </html>
