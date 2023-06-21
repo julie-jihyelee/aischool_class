@@ -29,16 +29,17 @@
     console.log(tit.innerText);
     console.log(tit.innerHTML);
 
-    // 접근한 요소의 콘텐츠를 업데이트(초기화)하려면? // 텍스트 내용만
+    // 접근한 요소의 콘텐츠를 업데이트(초기화)하려면? 
+    // 업데이트된 텍스트 내용은 웹 페이지에 출력된다!
     // 요소객체.innerText = 수정할 데이터 
-    tit.innerText = "<a href ='https://www.naver.com'>요소 접근에 성공!</a>"
+    tit.innerText = "요소 접근에 성공!"
 
     // 요소의 콘텐츠를 업데이트 할 때 새로운 요소를 반영하고 싶다면? // 태그 포함+텍스트
     // 요소객체.innerHTML = 요소+데이터 형태
     tit.innerHTML = "<a href ='https://www.naver.com'>요소 접근에 성공!</a>"
 
     // a 요소의 글자색을 파란색으로 변경하려면?
-    // HTMLcollection : 유사 배열
+    // HTMLcollection : 유사 배열 (형식은 배열이지만, 배열 함수는 쓸 수 없음)
     // 인덱싱으로 특정 객체 접근
     const aTag = tit.getElementsByTagName('a');
     console.log(aTag);

@@ -1,0 +1,138 @@
+[가위바위보게임 - 코드수정본]
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 3px solid black;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .container>button {
+            margin-top: 10px;
+        }
+
+        .win {
+            border: 3px solid green;
+        }
+
+        .lose {
+            border: 3px solid red;
+        }
+
+        .tie {
+            border: 3px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h1>Me</h1>
+            <div id="box-me">...</div>
+            <h3 id="result-me">...</h3>
+        </div>
+        <div class="box">
+            <h1>Computer</h1>
+            <div id="box-computer">...</div>
+            <h3 id="result-computer">...</h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <button id="btn-play">Play</button>
+    </div>
+
+    <script>
+        /*
+            1. 유저가 Play 버튼을 누른다.
+            2. 유저와 컴퓨터는 랜덤으로 가위, 바위, 보를 출력한다.
+            3. 유저와 컴퓨터의 값을 비교하여 출력한다.
+                3-1. 승패에 따라 win, lose 를 출력
+                3-2. 비긴 경우, tie 출력
+            4. 승패에 따라 테두리가 다르게 출력한다. ( HTML객체.setAttribute() 활용 ) 
+                4-1. 이긴 경우, 초록색 테두리
+                4-2. 진 경우, 빨간색 테두리
+                4-3. 비긴 경우, 검정색 테두리
+        */
+        const playBtn = document.getElementById("btn-play");
+
+        //랜덤하게 생성된 유저와 컴퓨터의 가위바위보결과를 보여주는 요소객체
+        const boxMe = document.getElementById("box-me");
+        const boxComputer = document.getElementById("box-computer");
+
+        //유저와 컴퓨터의 값을 비교한 후 결과를 보여주는 요소객체
+        const resultMe = document.getElementById("result-me");
+        const resultComputer = document.getElementById("result-computer");
+
+        //승패에 따른 테두리 스타일을 적용할 요소객체
+        //0번째 인덱스 : 유저 box
+        //1번째 인덱스 : 컴퓨터 box
+        const boxList = document.getElementsByClassName("box");
+        // console.log(boxList);
+
+        let dataList = ["가위","바위","보"];
+
+        //play버튼을 클릭했을 때 동작하는 로직 구현
+        playBtn.addEventListener("click", ()=>{
+            let userIdx = parseInt(Math.random()*3);
+            let user = dataList[userIdx];
+
+            let computer = dataList[parseInt(Math.random()*3)];
+
+            console.log(`유저: ${user} | 컴퓨터: ${computer}`);
+
+            //가위바위보 값을 웹 페이지에 출력
+            boxMe.innerText = user;
+            boxComputer.innerText = computer;
+
+            //유저와 컴퓨터의 값을 비교한 후 웹 페이지에 결과를 출력하는 로직 구현
+            if(user==="가위" && computer==="보" || user==="바위" && computer==="가위" ||
+               user==="보" && computer==="바위"){
+
+                resultMe.innerText = "WIN👍"; 
+                boxList[0].setAttribute("class","box win");
+
+                resultComputer.innerText = "LOSE😔";
+                boxList[1].setAttribute("class","box lose");
+            }else if(computer==="가위" && user==="보" || computer==="바위" && user==="가위" ||
+                     computer==="보" && user==="바위"){
+                resultComputer.innerText = "WIN👍";
+                boxList[1].setAttribute("class","box win");
+
+                resultMe.innerText = "LOSE😔"; 
+                boxList[0].setAttribute("class","box lose");
+            }else{
+                resultComputer.innerText = "Tie😒";
+                resultMe.innerText = "Tie😒"; 
+
+                boxList[1].setAttribute("class","box tie");
+                boxList[0].setAttribute("class","box tie");
+            }
+        });
+        
+
+    </script>
+
+</body>
+
+</html>
