@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let memNum = parseInt(prompt('현재 인원은 몇명인가요?'));
+    let colNum = parseInt(prompt('한 줄에 몇명씩 앉나요?'));
+    let rowNum ;
+    
+    
+    if(memNum%colNum === 0){
+      rowNum = memNum/colNum
+    }else{
+      rowNum = memNum/colNum + 1
+    }
+    
+      document.write(`현 인원은 ${memNum}이고, 한 줄에 ${colNum}명씩 앉겠습니다.<br/> 총 ${rowNum}줄이 생성됩니다. `)
+
+
+
+
+
+
+32
+
+  </script>
+</body>
+</html>

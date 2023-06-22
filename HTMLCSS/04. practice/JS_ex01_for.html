@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript-for</title>
+  <style>
+    .box{
+      display:inline-block;
+      border: 1px solid gray;
+      border-radius: 20px;
+      box-sizing: content-box;
+      width : 160px;
+      padding : 30px 10px 40px 10px;
+      text-align : center;
+      margin : 20px;
+      background-color: sandybrown;
+    }
+    h1{
+      text-align : center;
+      margin-top : 60px;
+    }
+    .on{
+      background-color: antiquewhite;
+      font-size: 1.1rem;
+      position : relative;
+    }
+    
+  </style>
+</head>
+<body>
+  
+  <h1>구구단 외우기</h1>
+  
+  
+  
+  
+  
+  <!-- JavaScript-->
+  <script>
+    /* 반복문
+    - 반복문을 우리가 왜 쓸까?
+    - 개발자가 가장 싫어하는 일 => 반복.....^^^^^
+
+    1) for문
+    - 반복의 범위를 내가 알고 있을 때
+    for(초기화식;종료조건;증감식){
+      반복할 실행문(로직);
+    }
+
+    2) while문
+    - 반복의 범위를 내가 모르고 있을 때
+    
+    
+    
+    
+    
+    */
+    
+    
+    // box[0].setAttribute('class', 'box on');
+    
+
+
+
+
+
+    // 미션) console창에 2~9까지 출력하기
+    for(let i = 2; i<10;i++){
+      document.write(`<div class="box" id="box${i}">`);
+      document.write(`<h2>${i}단</h2>`);
+      for(let j = 1; j<10 ; j++){
+        document.write(`${i} X ${j} = ${i*j}<br>`)
+      }
+      document.write('</div>')
+    }
+     
+    // 표현식
+    // ``(백틱)안에다가 문자를 작성
+    // 변수 작성 시에는 ${} 안에 작성
+
+    const box = document.getElementsByClassName('box');
+    console.log(box);
+
+    for(let i = 0; i<10 ;i++){
+      box[i].addEventListener('mousemove',()=>{
+        box[i].setAttribute('class','box on');
+    })
+    }
+
+  </script>
+
+
+
+</body>
+</html>
