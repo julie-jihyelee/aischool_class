@@ -15,6 +15,10 @@
       display:flex;
       flex-direction: row;
       flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top : 100px;
     }
     .poke-card{
       display: flex;
@@ -35,6 +39,11 @@
       height : 200px;
       margin-top: 30px ;
     }
+
+    .poke-img:hover{
+      scale : 110%;
+    }
+
     .poke{
       display: inline-block;
       font-family:'SBAggroB';
@@ -42,6 +51,9 @@
     }
     .name{
       font-size : 1.5rem;
+    }
+    .name strong {
+      color : red;
     }
   </style>
 </head>
@@ -56,24 +68,24 @@
       <span class="poke weight">몸무게 : <span class="weightNum">6.9 </span>kg</span>
     </div>
     <div class="poke-card">
-      <img class="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="이상해씨">
-      <span class="poke num">1</span>
+      <img class="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" alt="이상해씨">
+      <span class="poke num">no.2</span>
       <span class="poke name">이상해씨</span>
       <span class="poke type">씨앗포켓몬</span>
       <span class="poke height">키 : <span class="heightNum">0.7 </span>m</span>
       <span class="poke weight">몸무게 : <span class="weightNum">6.9 </span>kg</span>
     </div>
     <div class="poke-card">
-      <img class="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="이상해씨">
-      <span class="poke num">1</span>
+      <img class="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png" alt="이상해씨">
+      <span class="poke num">no.3</span>
       <span class="poke name">이상해씨</span>
       <span class="poke type">씨앗포켓몬</span>
       <span class="poke height">키 : <span class="heightNum">0.7 </span>m</span>
       <span class="poke weight">몸무게 : <span class="weightNum">6.9 </span>kg</span>
     </div>
     <div class="poke-card">
-      <img class="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="이상해씨">
-      <span class="poke num">1</span>
+      <img class="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" alt="이상해씨">
+      <span class="poke num">no.4</span>
       <span class="poke name">이상해씨</span>
       <span class="poke type">씨앗포켓몬</span>
       <span class="poke height">키 : <span class="heightNum">0.7 </span>m</span>
@@ -82,11 +94,16 @@
   </div>
 
   <!-- JavaScript -->
-  <script src=""></script>
+  <script src="./js/jquery-3.7.0.js"></script>
   <script>
+
+
     // $.ajax({
-    //   url: ,
-    //   success:(result)=>{
+    //   url: imageURL,
+    //   success:(result)=>{ 
+    //     for(i = 1, i<5;  i++){
+    //       pokeimg[i].getAttribute('src')
+    //     } 
 
     //   },
     //   error:()=>{
