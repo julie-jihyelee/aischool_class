@@ -1,66 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
     @font-face {
-    font-family: 'SBAggroB';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-    .poke-list{
-      display:flex;
+      font-family: 'SBAggroB';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    #poke-list {
+      display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       position: relative;
-      top : 100px;
+      
     }
-    .poke-card{
+
+    .poke-card {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width : 250px;
-      height : 380px;
-      border : 1px solid rgb(212, 212, 212);
+      width: 250px;
+      height: 380px;
+      border: 5px solid rgb(204, 252, 127);
       border-radius: 20px;
-      box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
-      background-color: rgb(242, 252, 251);
-      padding : 30px;
-      margin : 10px;
-      
-    }
-    .poke-img{
-      width : 200px;
-      height : 200px;
-      margin-top: 30px ;
+      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+      background: black;
+      box-sizing: border-box;
+      padding: 25px 0px 30px 0px;
+      margin : 5px;
+
     }
 
-    .poke-img:hover{
-      scale : 110%;
+    .poke-img {
+      width:160px;
+      height: 160px;
+      margin-top: 10px;
+      margin-bottom: 15px;
     }
 
-    .poke{
-      display: inline-block;
-      font-family:'SBAggroB';
-      margin : 3px;
+    .poke-img:hover {
+      scale: 110%;
     }
-    .name{
-      font-size : 1.5rem;
+
+    .poke {
+      display: none;
+      font-family: 'SBAggroB';
+      color: rgb(199, 247, 122);
+      margin: 2px;
     }
+
+    .name {
+      font-size: 1.7rem;
+    }
+
     .name strong {
-      color : red;
+      color: red;
+    }
+    .num{
+      margin: 10px;
+      color:rgb(143, 143, 143);
+    }
+    h1, h1+p{
+      
+      margin-top: 30px;
+      font-family: 'SBAggroB';
+      text-align: center;
     }
   </style>
 </head>
+
 <body>
-  <div class="poke-list">
-    <div class="poke-card">
-      <img class="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="이상해씨">
+  <h1>포켓몬 도감</h1>
+  <p><strong>총 <span id="total"></span>마리</strong></p>
+  <div id="poke-list">
+    <!-- <div class="poke-card">
+      <img class="poke-img"
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+        alt="이상해씨">
       <span class="poke num">no.1</span>
       <span class="poke name">이상해씨</span>
       <span class="poke type">씨앗포켓몬</span>
@@ -68,7 +92,9 @@
       <span class="poke weight">몸무게 : <span class="weightNum">6.9 </span>kg</span>
     </div>
     <div class="poke-card">
-      <img class="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" alt="이상해씨">
+      <img class="poke-img"
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+        alt="이상해씨">
       <span class="poke num">no.2</span>
       <span class="poke name">이상해씨</span>
       <span class="poke type">씨앗포켓몬</span>
@@ -76,7 +102,9 @@
       <span class="poke weight">몸무게 : <span class="weightNum">6.9 </span>kg</span>
     </div>
     <div class="poke-card">
-      <img class="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png" alt="이상해씨">
+      <img class="poke-img"
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+        alt="이상해씨">
       <span class="poke num">no.3</span>
       <span class="poke name">이상해씨</span>
       <span class="poke type">씨앗포켓몬</span>
@@ -84,32 +112,112 @@
       <span class="poke weight">몸무게 : <span class="weightNum">6.9 </span>kg</span>
     </div>
     <div class="poke-card">
-      <img class="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" alt="이상해씨">
+      <img class="poke-img"
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+        alt="이상해씨">
       <span class="poke num">no.4</span>
       <span class="poke name">이상해씨</span>
       <span class="poke type">씨앗포켓몬</span>
       <span class="poke height">키 : <span class="heightNum">0.7 </span>m</span>
       <span class="poke weight">몸무게 : <span class="weightNum">6.9 </span>kg</span>
-    </div>
+    </div> -->
   </div>
 
   <!-- JavaScript -->
   <script src="./js/jquery-3.7.0.js"></script>
   <script>
 
+    // 포켓몬 APT를 이용해서 포켓몬 도감 만들기!
+    // 보여줄 정보 : 포켓몬이름(name), 포켓몬종(genus), 키(height), 몸무게(weight)
+    // 포켓몬 이름, 포켓몬 종 요청 URL : https://pokeapi.co/api/v2/pokemon-species/1
+    // 키, 몸무게 요청 URL : https://pokeapi.co/api/v2/pokemon/
 
-    // $.ajax({
-    //   url: imageURL,
-    //   success:(result)=>{ 
-    //     for(i = 1, i<5;  i++){
-    //       pokeimg[i].getAttribute('src')
-    //     } 
+    const pokeURL = 'https://pokeapi.co/api/v2/pokemon-species';
+    const pokeURL2 = 'https://pokeapi.co/api/v2/pokemon';
 
-    //   },
-    //   error:()=>{
+    let speciesList = []; // 이름, 종 [{name:'이상해씨', genus:'씨앗포켓몬'}, ...]
+    let pokemonList = []; // 키, 몸무게 [{weight:10, height:20}, ...]
 
-    //   }
-    // })
+
+    // 이름, 종 정보 가져오기
+    const getPokeData = (poke_url) => {
+      for (let i = 1; i < 152; i++) {
+        $.ajax({
+          url: `${poke_url}/${i}`,
+          //통신순서를 동기방식으로 -> 요청과 응답을 순차적으로! 
+          async: false, // true의 경우 : 비동기방식
+          success: (result) => {
+            // console.log(result.names[2].name, result.genera[1].genus);
+            speciesList.push({ name: result.names[2].name, genus: result.genera[1].genus });
+          },
+          error: () => {
+            alert('요청 실패!')
+          }
+        });
+      }
+    }
+
+    // 키, 몸무게 정보 가져오기
+    const getPokeData2 = (poke_url) => {
+      for (let i = 1; i < 152; i++) {
+        $.ajax({
+          url: `${pokeURL2}/${i}`,
+          async: false,
+          success: (result) => {
+            // console.log(result.height, result.weight);
+            pokemonList.push({ weight: result.weight, height: result.height });
+          },
+          error: () => {
+            console.log('요청실패');
+          }
+        });
+      }
+    }
+
+    const drawPokeCard = () => {
+      let resultHTML = ``;
+
+      for (let i = 0; i < pokemonList.length ; i++) {
+
+        resultHTML += `
+        <div class="poke-card">
+          <span class="poke num">no. ${i+1}</span>
+          <span class="poke name">${speciesList[i].name}</span>
+          <img class="poke-img"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${i+1}.png"
+            alt="${speciesList[i].name}">
+          <span class="poke height">키 : <span class="heightNum">${pokemonList[i].weight/10}</span>m</span>
+          <span class="poke weight">몸무게 : <span class="weightNum">${pokemonList[i].weight/10} </span>kg</span>
+        </div>
+      `;
+
+      // 총 포켓몬 수 출력하기
+        document.getElementById('total').innerText = speciesList.length;
+      // 포켓몬 카드 출력하기
+        document.getElementById('poke-list').innerHTML = resultHTML;
+      }
+    }
+
+
+    //포켓몬 데이터 요청하기
+    getPokeData2(pokeURL2);
+    getPokeData(pokeURL);
+
+    console.log(pokemonList);
+    console.log(speciesList);
+
+  
+
+    //포켓몬 카드 그리기
+    drawPokeCard();
+
+    const text = document.getElementsByClassName('poke');
+    const card = document.getElementsByClassName('poke-card');
+
+
+
+
   </script>
 </body>
+
 </html>

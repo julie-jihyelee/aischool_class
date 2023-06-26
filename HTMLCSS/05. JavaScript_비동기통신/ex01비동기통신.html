@@ -56,8 +56,11 @@
 
           for (let i = 0; i < movieList.length; i++) {
             console.log(movieList[i].rank, movieList[i].movieNm, movieList[i].openDt);
+            
+            // document.createElement(생성할 태그명) : HTML요소 객체를 생성해주는 함수
             let li = document.createElement('li');
             li.setAttribute('class','list');
+            // document.createTextNode(생성할 태그명) : 내용 객체를 생성해주는 함수
             let content = document.createTextNode(`${movieList[i].rank}위 : ${movieList[i].movieNm}(${movieList[i].openDt})`);
 
             //1. Text-> li에 붙이기 (부모노드.appendChild(자식노드))
