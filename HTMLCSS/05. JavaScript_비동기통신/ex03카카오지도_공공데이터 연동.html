@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카카오 지도 실습</title>
+  <style>
+    @font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700,100;
+    font-style: normal;
+}
+    strong{
+      font-family: 'TheJamsil5Bold';
+      color:rgb(26, 123, 233);
+      font-size: 1rem;
+    }
+    p{
+      font-weight: 100;
+      display: inline-block;
+      font-size: 0.7rem;
+      word-wrap: break-word;
+    }
+    span{
+      font-size: 0.7rem;
+      color :gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map" style="width:700px;height:700px;"></div>
+
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=11c558d6a78bf3f5103a68cde765d4f2"></script>
+  <script src="./js/jquery-3.7.0.js"></script>
+
+  <script>
+    let tourInfo = [];
+    const getPublicData = () => {
+      const tourURL = 'http://apis.data.go.kr/6290000/tourdestbaseinfo/gettourdestbaseinfo?serviceKey=lVQ6Tpb2yHojVydR6KZaiOqT9TuOa6%2BXkxSLmKTWqzzDEoBtbpuvnCpR28yquw%2B7d0%2Br%2BbyL4TgOsfrTwbKi7g%3D%3D&type=json';
+
+      $.ajax({
+        url: tourURL,
+        async: false,
+        success: (result) => {
+          // console.log(result);
+          // //주소 - 도로명
+          // console.log(result.TourDestBaseInfo[0].addrRoad);
+          // //주소 - 도로명
+          // console.log(result.TourDestBaseInfo[0].addrJibun);
+          // //위경도
+          // console.log(result.TourDestBaseInfo[0].lat);
+          // console.log(result.TourDestBaseInfo[0].lng);
+          // //인트로정보
+          // console.log(result.TourDestBaseInfo[0].tourDestIntro);
+          // //장소명
+          // console.log(result.TourDestBaseInfo[0].tourDestNm);
+
+          //객체로 저장하기
+          for (let i = 0; i < 83; i++) {
+            tourInfo.push({
+              name: result.TourDestBaseInfo[i].tourDestNm,
+              intro: result.TourDestBaseInfo[i].tourDestIntro,
+              lat: result.TourDestBaseInfo[i].lat,
+              lng: result.TourDestBaseInfo[i].lng,
+              addrJibun: result.TourDestBaseInfo[i].addrJibun,
+              addrRoad: result.TourDestBaseInfo[i].addrRoad
+            })
+          }
+
+          console.log("관광지정보", tourInfo);
+          
+          
+
+
+        },
+        error: () => {
+          alert('공공데이터 요청 실패!');
+        }
+      });
+    }
+    //광주 관광지 데이터 요청하는 함수 호출
+    getPublicData();
+
+
+    let container = document.getElementById('map'); //지도를 표시할 div
+    let options = {
+      center: new kakao.maps.LatLng(35.146617, 126.922271), //지도의 중심좌표
+      level: 7 // 화면에 보여지는 지도의 확대 레벨 (숫자가 작을수록 확대)
+    };
+
+    let map = new kakao.maps.Map(container, options); //지도 생성
+
+    //여러개 마커에 이벤트 등록
+    // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
+
+    
+    let positions = [];
+          for (let i = 0; i < 83; i++) {
+
+            let address = '';
+            if (tourInfo[i].addrRoad == ''){
+              address = tourInfo[i].addrJibun;
+            }else{
+              address = tourInfo[i].addrRoad;
+            }
+
+            positions.push({
+              content: `<div style="padding:7px; width:180px;"><strong>${tourInfo[i].name}</strong><br>
+                <span>${address}</span>
+                <p>${tourInfo[i].intro}</p></div>`,
+              latlng: new kakao.maps.LatLng(tourInfo[i].lat, tourInfo[i].lng)
+            })
+          }
+
+          console.log("마커 정보", positions);
+
+
+    for (let i = 0; i < positions.length; i++) {
+      // 마커를 생성합니다
+      let marker = new kakao.maps.Marker({
+        map: map, // 마커를 표시할 지도
+        position: positions[i].latlng // 마커의 위치
+      });
+
+      // 마커에 표시할 인포윈도우를 생성합니다 
+      var infowindow = new kakao.maps.InfoWindow({
+        content: positions[i].content // 인포윈도우에 표시할 내용
+
+      });
+
+      // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+      // 이벤트 리스너로는 클로저를 만들어 등록합니다 
+      // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+      kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+      kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+    }
+
+    // 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+    function makeOverListener(map, marker, infowindow) {
+      return function () {
+        infowindow.open(map, marker);
+      };
+    }
+
+    // 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+    function makeOutListener(infowindow) {
+      return function () {
+        infowindow.close();
+      };
+    }
+
+
+
+  </script>
+
+
+</body>
+
+</html>
