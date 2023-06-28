@@ -1,0 +1,15 @@
+1. Node 서버 설치
+2. powershell 실행 
+  [npm -v] : 설치됐는지 확인 
+3. 리액트 프로젝트를 만들어줄 폴더로 이동
+  [cd 경로설정]
+  ex) cd C:\Users\user\Documents\react
+
+4. npx create-react-app '폴더이름'
+  ex) npx create-react-app project01
+
+5. 새로 생성한 폴더로 이동
+  ex) cd project01
+
+6. 리액트 프로젝트 시작!
+  ex)  npm start
