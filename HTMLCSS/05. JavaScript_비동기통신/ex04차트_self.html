@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 600px;
+    }
+    #dashboard{
+      display : flex;
+      flex-wrap : wrap ;
+      width: auto;
+      justify-content: space-evenly;
+      
+    }
+  </style>
+</head>
+
+<body>
+  <div id="dashboard">    
+    <div>
+      <canvas id="barChart"></canvas>
+    </div>
+    <div>
+      <canvas id="lineChart"></canvas>
+    </div>
+    <div>
+      <canvas id="doughnutChart"></canvas>
+    </div>
+    <div>
+      <canvas id="pieChart"></canvas>
+    </div>
+    <div>
+      <canvas id="radarChart"></canvas>
+    </div>
+    <div>
+      <canvas id="polarChart"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./js/jquery-3.7.0.js"></script>
+  <script>
+
+    const drawChart = (target, chartType, dateArr, elecDataArr) => {
+      const ctx = document.getElementById(target);
+
+      new Chart(ctx, {
+        type: chartType,
+        data: {
+          labels: dateArr,
+          datasets: [{
+            label: '전기 생산량', // 데이터의 제목 정의
+            data: elecDataArr,
+            borderWidth: 2 // 데이터 박스 선의 두께
+          }] // labels와 data의 개수가 동일해야 그래프가 잘 그려집니다! 확인!
+        },
+        options: { //그래프로 속성 : 가이드 문서 활용
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    }
+
+    
+
+    
+    let dateArr =[]; //날짜를 저장하는 배열
+    let elecDataArr =[]; //생산량을 저장하는 배열
+
+    // 전기 생산량 데이터를 요청하는 함수
+    const reqURL = 'http://apis.data.go.kr/B553734/iseelectricprod/getElectricProduction?serviceKey=lVQ6Tpb2yHojVydR6KZaiOqT9TuOa6%2BXkxSLmKTWqzzDEoBtbpuvnCpR28yquw%2B7d0%2Br%2BbyL4TgOsfrTwbKi7g%3D%3D&returnType=json&numOfRows=30&pageNo=1';
+    const getPublicData = ()=>{
+      $.ajax({
+        url : reqURL,
+        async: false,
+        success:(result)=>{
+
+          // 데이터 정제를 위해 변수에 저장
+          let itemList = result.body.items.item;         
+          console.log(itemList);
+
+          // 서부지사 전기생산량 데이터 가져오기
+          // -날짜(dates), 전기생산량(elecprodqyt)
+          for(let i = 0 ; i < itemList.length; i++){
+            if(itemList[i].branchNm === '서부지사'){
+              dateArr.push(itemList[i].dates);
+              elecDataArr.push(itemList[i].elecprodqty);
+            }
+          }
+
+          // 데이터가 잘 추가 되었는지 확인
+          console.log(dateArr, elecDataArr);
+
+          // // 데이터가 반영된 그래프 출력
+          // drawChart('barChart', 'bar')
+          // drawChart('lineChart', 'line')
+          // drawChart('doughnutChart', 'doughnut')
+          // drawChart('pieChart', 'pie')
+          // drawChart('radarChart', 'radar')
+          // drawChart('polarChart', 'polarArea')
+
+        },
+        error: ()=>{
+          alert('데이터 요청 실패!');
+        }
+      });
+
+    }
+
+    getPublicData();
+    
+    // 일정 시간이 지나면 실행되는 함수
+    setTimeout(() => {
+      drawChart('barChart', 'bar', dateArr, elecDataArr)
+      drawChart('lineChart', 'line', dateArr, elecDataArr)
+      drawChart('doughnutChart', 'doughnut',dateArr, elecDataArr)
+      drawChart('pieChart', 'pie', dateArr, elecDataArr)
+      drawChart('radarChart', 'radar', dateArr, elecDataArr)
+      drawChart('polarChart', 'polarArea', dateArr, elecDataArr)
+    }, 1000);
+
+    // 주기적으로 실행되는 함수
+    // setInterval(() => {
+      
+    // }, interval);
+
+  </script>
+</body>
+
+</html>

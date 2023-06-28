@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+    }
+    #dashboard{
+      display : flex;
+      flex-wrap : wrap ;
+      width: auto;
+      justify-content: space-evenly;
+      
+    }
+  </style>
+</head>
+
+<body>
+  <div id="dashboard">    
+    <div>
+      <canvas id="barChart"></canvas>
+    </div>
+    <div>
+      <canvas id="lineChart"></canvas>
+    </div>
+    <div>
+      <canvas id="doughnutChart"></canvas>
+    </div>
+    <div>
+      <canvas id="pieChart"></canvas>
+    </div>
+    <div>
+      <canvas id="radarChart"></canvas>
+    </div>
+    <div>
+      <canvas id="polarChart"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+
+    const drawChart = (target, chartType) => {
+      const ctx = document.getElementById(target);
+
+      new Chart(ctx, {
+        type: chartType,
+        data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [{
+            label: 'bar Chart', // 데이터의 제목 정의
+            data: [6, 8, 13, 5, 12, 3],
+            borderWidth: 2 // 데이터 박스 선의 두께
+          }] // labels와 data의 개수가 동일해야 그래프가 잘 그려집니다! 확인!
+        },
+        options: { //그래프로 속성 : 가이드 문서 활용
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    }
+
+    drawChart('barChart', 'bar')
+    drawChart('lineChart', 'line')
+    drawChart('doughnutChart', 'doughnut')
+    drawChart('pieChart', 'pie')
+    drawChart('radarChart', 'radar')
+    drawChart('polarChart', 'polarArea')
+
+
+
+
+
+  </script>
+</body>
+
+</html>
