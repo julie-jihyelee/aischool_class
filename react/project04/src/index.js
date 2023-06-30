@@ -3,18 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-//1. App - Component & Props 개념
-// import App from './App';
-
-// 2. Component & Props 실습
-import App from './AppExample';
-
+// 1. Ex01 - 변수와 State의 차이
+import App from './Ex01';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
+
     <App />
-  
+
 );
 
 // If you want to start measuring performance in your app, pass a function
