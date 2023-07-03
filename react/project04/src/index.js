@@ -10,11 +10,11 @@ import reportWebVitals from './reportWebVitals';
 // import App from './Ex02';
 
 // 3. Ex03 - 참참참 실습
-// import App from './Ex03';
+import App from './Ex03';
 // import App from './Ex03_1';
 
 // 4. map함수와 filter함수 (JS개념)
-import App from './Ex04';
+// import App from './Ex04';
 
 
 

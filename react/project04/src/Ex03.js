@@ -27,26 +27,30 @@ const Ex03 = () => {
   }
 
   const style={
+    
     width : '350px',
     textAlign: 'center',
     fontWeight: '700',
     backgroundColor : 'whitesmoke',
     padding : '20px',
     borderRadius : '50px',
-    margin : '20px'
+    margin : '20px auto'
   }
 
   const btnStyle={
     margin : '10px'
   }
 
-  const pStyle={
+  const box={
     display : 'inline-block',
     backgroundColor : 'gray',
     color : 'white',
-    padding : '15px',
-    borderRadius : '20px'
+    padding : '3px 15px',
+    borderRadius : '20px',
+    margin : '15px'
   }
+
+  
 
   return (
     <div style={style}>
@@ -59,8 +63,9 @@ const Ex03 = () => {
       <hr/>
       <p>나의 선택 : {mine} </p>
       <p>컴퓨터의 선택 : {comp} </p>
-      <p style={pStyle}>결과는? {(mine === comp) ? '나의 승리! ╰(*°▽°*)╯ ': '나의 패배! (┬┬﹏┬┬)'}</p>
-      
+      <div style = {box}>
+      <p>결과는? {(mine === comp) ? '나의 승리! ╰(*°▽°*)╯ ': '나의 패배! (┬┬﹏┬┬)'}</p>
+      </div>
        {/* 결과 비교 : 
        1) 나의 선택 == 컴퓨터의 선택 : 나의 승리 
        2) !=면 나의 패배  
