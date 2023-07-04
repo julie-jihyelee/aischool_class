@@ -1,0 +1,72 @@
+#style {
+  width : 350px;
+  text-align : center;
+  font-Weight: 700;
+  background-color : rgb(247, 247, 247);
+  padding : 20px;
+  border-Radius : 50px;
+  margin : 20px auto
+}
+
+.btnStyle {
+  margin : 10px;
+}
+
+
+.winBox {
+  display : inline-block;
+  background-color : rgb(240, 134, 48);
+  color : white;  
+  padding : 4px 20px;
+  border-Radius : 20px;
+  margin : 15px
+}
+
+.loseBox {
+  display : inline-block;
+  background-color : rgb(51, 51, 51);
+  color : white;  
+  padding : 4px 20px;
+  border-Radius : 20px;
+  margin : 15px
+}
+
+
+@font-face {
+  font-family: 'KOTRAHOPE';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GangwonEdu_OTFBoldA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  display : flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#root {
+  height : 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #FF6666;
+  font-size: 3.4rem;
+  font-family: 'KOTRAHOPE';
+  
+}
+
+@font-face {
+  font-family: 'BRBA_B';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/BRBA_B.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
