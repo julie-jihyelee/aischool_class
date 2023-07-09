@@ -19,13 +19,14 @@ const MainPage = () => {
 
   return (
     <div>
-      MainPage
-      <hr/>
+      <Link to='/'><img src="https://www.pet-news.or.kr/news/photo/202303/2834_4316_1516.jpg" alt='메인이미지'></img></Link>
+      
+{/*       
       <Link to='/about'>AboutPage</Link>
       {" "}
       <Link to='/login'>LoginPage</Link>
       {" "}
-      <Link to='http://www.naver.com'>네이버로 이동</Link>
+      <Link to='http://www.naver.com'>네이버로 이동</Link> */}
 
     </div>
   )

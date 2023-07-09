@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>끝말잇기 해봐요</h1>
+    <p class="qustion">시작</p>
+    <input type="text" />
+    <p class="result">입력해봐요</p>
+  </div>
+  <script>
+
+    // 시작 키워드 -> 엔터키 입력 -> 사용자의 입력값으로 변환
+    // 사용자의 입력값 첫글자 === 시작키워드 끝글자 : 입력해봐요!->정답!!
+    // 사용자 !== 시작 키워드 : 땡!!
+    // 사용자 null : 제대로 입력하세용
+
+
+    const question = document.getElementsByClassName('qustion');
+    const input = document.getElementsByTagName('input');
+    const result = document.getElementsByClassName('result');
+
+
+      (function () {
+        document.addEventListener('keydown', function (e) {
+          const keyCode = e.keyCode;
+          let qIdx = question[0].innerText.length
+          let qKey = question[0].innerText
+          console.log('q:', qIdx, qKey)
+
+          if (keyCode == 13) {
+
+            let iIdx = input[0].value.length
+            let iKey = input[0].value
+            console.log('i:', iIdx, iKey);
+
+            if (iIdx === 0) {
+
+              result[0].innerText = '제대로 입력하세용';
+            } else {
+              console.log(qKey[qIdx - 1], iKey[0])
+
+              if (qKey[qIdx - 1] === iKey[0]) {
+                result[0].innerText = '정답!!!';
+
+
+              } else {
+                result[0].innerText = '땡!!!';
+
+              }
+              question[0].innerText = input[0].value;
+              input[0].innerText = input[0];
+            }
+            input[0].value = null;
+
+          }
+
+        })
+      })();
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

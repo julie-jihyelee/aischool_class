@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-color: rgb(247, 228, 199);
+  color:rgb(19, 136, 81);
+  font-family: 'SBAggroB';
+  font-weight : 'bold'  
 }
 
 .App-logo {
@@ -42,12 +46,57 @@
  justify-content : center;
 }
 
-td {
-  padding : 10px;
-  margin : 10px;
-  
+
+.title {
+  margin: 40px;
+  font-family: 'SBAggroB';
 }
 
-h1 {
-  margin-bottom: 3px;
+@font-face {
+  font-family: 'omyu_pretty';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.board {
+  width: 70%;
+  font-family: 'SUITE-Regular';
+  border-top: 1px solid #444444;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom : 50px;
+  border : 1px solid green;
+}
+th, td {
+  padding: 10px;
+  margin : 10px;
+  border-bottom : 1px solid green;
+}
+
+footer>p {
+  margin: 0px;
+  font-family: 'SUITE-Regular';
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+@font-face {
+  font-family: 'SBAggroB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal; 
+  }
+
+.m_tit {
+  font-family: 'SBAggroB';
+  font-size: 1.3rem;
 }

@@ -8,10 +8,16 @@ import Detail from './pages/Detail';
 import NotFound from './pages/NotFound';
 import { Link } from 'react-router-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
+import { Button, ButtonGroup } from 'react-bootstrap';
 
 function App() {
 
-
+  const nav = useNavigate()
+  const linkStyle={
+    textDecoration: 'none'
+  }
 
   /*
   라우팅 기능을 사용해보자!
@@ -49,33 +55,59 @@ function App() {
   */
   return (
     <div className="App">
-      <BrowserRouter>
-        <h1> Welcome to React Router!</h1>
-        <div id="NaviBar">
-          <tr>
-            <td><Link to='/'  style={{textDecoration : 'none'}}>Main</Link></td>
-            <td><Link to='/about' style={{textDecoration : 'none'}}>About</Link></td>
-            <td><Link to='/login' style={{textDecoration : 'none'}}>Login</Link></td>
-            <td><Link to='/board' style={{textDecoration : 'none'}}>Board</Link></td>
-            <td><Link to='/detail' style={{textDecoration : 'none'}}>Detail</Link></td>
-            <td><Link to='/notfound' style={{textDecoration : 'none'}}>NotFound</Link></td>
-          </tr>
-        </div>
+      <br/>
+      <h1 className='title'> Welcome to React Router!</h1>
+
+      {/* 상단바 생성 */}
+      <div>
+        <ButtonGroup aria-label="Basic example">
+          <Button variant="outline-success" onClick={() => { nav('/') }}>Main</Button>
+          <Button variant="outline-success" onClick={() => { nav('/login') }}>Login</Button>
+          <Button variant="outline-success" onClick={() => { nav('/about') }}>About</Button>
+          <Button variant="outline-success" onClick={() => { nav('/board') }}>Board</Button>
+          <Button variant="outline-success" onClick={() => { nav('/detail') }}>Detail</Button>
+        </ButtonGroup>
+      </div>
+      <br/>     
+      {/* <p>링크를 사용한 네비바 만들기 - 숙제</p>
+      <div id="NaviBar">
         <hr />
+        <table>
+          <tr>
+            <td><Link to='/' style={linkStyle}>Main</Link></td>
+            <td><Link to='/about' style={linkStyle}>About</Link></td>
+            <td><Link to='/login' style={linkStyle}>Login</Link></td>
+            <td><Link to='/board' style={linkStyle}>Board</Link></td>
+            <td><Link to='/detail' style={linkStyle}>Detail</Link></td>
+            <td><Link to='/notfound' style={linkStyle}>NotFound</Link></td>
+          </tr>
+        </table>
+      </div> */}
+      <hr />
 
 
-        {/* Routes가 하는 역할 : 필요한 페이지 가져다주는 친구 */}
-        <Routes>
-          <Route path='/' element={<MainPage />}></Route>
-          <Route path='/about' element={<AboutPage />}></Route>
-          <Route path='/login' element={<LoginPage />}></Route>
-          <Route path='/board' element={<Board />}></Route>
-          <Route path='/detail' element={<Detail />}></Route>
-          <Route path='/notfound' element={<NotFound />}></Route>
-        </Routes>
+      {/* Routes가 하는 역할 : 필요한 페이지 가져다주는 친구 */}
+      <Routes>
+        <Route path='/' element={<MainPage />}></Route>
+        <Route path='/about' element={<AboutPage />}></Route>
+        <Route path='/login' element={<LoginPage />}></Route>
+        <Route path='/board' element={<Board />}></Route>
+        <Route path='/detail/:num' element={<Detail />}></Route>
+        {/* notFound 페이지는 우리가 설정해둔 path이외의 모든 페이지에서 떠야 한다. */}
+        <Route path='*' element={<NotFound />}></Route>
+      </Routes>
+      
 
-      </BrowserRouter>
+      <footer>
+        <hr/>
+        <p><b>이 모든 것은 선영표 선생님이 가르쳐준 리액트로 만들었습니다</b></p>
+        <br/>
+        <p>주소 : 광주광역시 동구 제봉로 92 (대성학원 1-3층)</p>
+        <p>담당자 : 이지혜 (010-8624-0113)</p>
+        <br/>
+      </footer>
     </div>
+    
   );
 }
 

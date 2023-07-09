@@ -3,7 +3,9 @@ import {Link} from 'react-router-dom'
 
 const LoginPage = () => {
   return (
-    <div>LoginPage</div>
+    <div>
+      LoginPage
+    </div>
   )
 }
 
