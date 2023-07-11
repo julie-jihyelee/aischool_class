@@ -2,10 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
-      여기서부터는 Footer
-
-    </div>
+    <div>연락처/정보</div>
   )
 }
 

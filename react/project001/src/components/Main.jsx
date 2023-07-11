@@ -2,9 +2,7 @@ import React from 'react'
 
 const Main = () => {
   return (
-    <div>
-      여기는 Main 영역입니다.
-    </div>
+    <div>리액트로 만드는 개인 프로젝트</div>
   )
 }
 

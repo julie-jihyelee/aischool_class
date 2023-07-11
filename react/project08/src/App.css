@@ -75,13 +75,10 @@ a:hover{
   background-color: rgb(27, 33, 61);
   color: white;
   display : flex;
-  font-family: 'HallymMjo-Regular';
 }
 
 .btn{
   margin : 2px;
-  font-family: 'HallymMjo-Regular';
-  
 }
 
 #title {
@@ -91,6 +88,9 @@ a:hover{
   font-family: 'HallymMjo-Regular';
 }
 
+h3 {
+  font-family: 'Chosunilbo_myungjo';
+}
 @font-face {
   font-family: 'HallymMjo-Regular';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymMjo-Regular.woff2') format('woff2');
@@ -100,4 +100,21 @@ a:hover{
 
 p{
   font-family: 'Chosunilbo_myungjo';
+}
+
+a{
+  text-decoration: none;
+  font-weight: bold;
+}
+
+img{
+  margin: 20px;
+}
+
+#input{
+  width : 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top : 30px;
 }

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const NewsItem = ({ obj }) => {
   console.log('props data :', obj)
 
+  
   return (
 
     /*
@@ -19,7 +20,7 @@ const NewsItem = ({ obj }) => {
 
     <div className='article-container'>
       <img width='400px' src={obj.urlToImage}></img>
-      <h3><Link to={obj.url} style={{ textDecoration: "none" }}>{obj.title}</Link></h3>
+      <h3><Link to={obj.url} style={{textDecoration:'none'}}>{obj.title}</Link></h3>
       <p>{obj.description}</p>
     </div>
   )
