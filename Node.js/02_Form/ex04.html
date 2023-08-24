@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POST</title>
+  <style>
+    #info-container {
+      margin-top: 100px;
+      text-align: center;
+    }
+    .text {
+      font-weight: bold;
+      font-size: 12px;
+    }
+    #tb {
+      display: inline-block;
+      text-align: center;
+      margin-top : 20px;
+    }
+    .label {
+      text-align: right;
+      color : rgb(1, 31, 43);
+      font-weight: bold;
+    }
+    .box{
+      height : 30px;
+      border-radius: 10px;
+      border: 1px solid lightblue;
+      padding : 0 10px;
+      
+    } 
+
+  </style>
+</head>
+
+<body>
+  <div id="info-container">
+    <h1>📤POST 방식으로 데이터를 전송해보자!</h1>
+    <form action="http://localhost:3333/" method="post">
+      <table id="tb">
+        <tr>
+          <td class="label"><span class="text">아이디</span></td>
+          <td><input class="box" type="text" name="id" placeholder="id를 입력하세요."></td>
+        </tr>
+        <tr>
+          <td class="label"><span class="text">비밀번호</span></td>
+          <td><input class="box" type="text" name="pw" placeholder="pw를 입력하세요."></td>
+        </tr> 
+      </table>
+      <br/><br/>
+      <input type="submit" value="전송">
+    </form>
+  </div>
+</body>
+
+</html>

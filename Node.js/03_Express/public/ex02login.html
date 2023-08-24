@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>❤️GET방식 데이터 전송❤️</h1>
+  <form action="http://localhost:3333/getLogin" method="get">
+    <input type="text" name="season" placeholder="좋아하는 계절을 입력해주세요">
+    <input type="text" name="youtuber" placeholder="좋아하는 유튜버를 입력해주세요">
+    <input type="submit">
+  </form>
+  <hr/>
+  <h1>📤POST방식 데이터 전송📤</h1>
+  <form action="http://localhost:3333/postLogin" method="post">
+    <input type="text" name="id" placeholder="ID를 입력하세요">
+    <input type="password" name="pw" placeholder="PW를 입력하세요">
+    <input type="submit" value="로그인">
+  </form>
+  
+</body>
+</html>

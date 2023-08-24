@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="info"></div>
+  <button id="req-button">데이터 요청</button>
+  <script src="../05. JavaScript_비동기통신/js/jquery-3.7.0.js"></script>
+  <script>
+    const dataURL="http://apis.data.go.kr/1360000/FmlandWthrInfoService/getFmlandPwn?serviceKey=lVQ6Tpb2yHojVydR6KZaiOqT9TuOa6%2BXkxSLmKTWqzzDEoBtbpuvnCpR28yquw%2B7d0%2Br%2BbyL4TgOsfrTwbKi7g%3D%3D&numOfRows=10&pageNo=1&CURRENT_TM=2016120823&AREA_ID=4827000001&PA_CROP_SPE_ID=PA020101"
+    const info = document.getElementById('info');
+    const reqButton = document.getElementById('req-button');
+    
+    const getWeatherData =() =>{
+      $.ajax({
+        url : dataURL,
+        success: (result) =>{
+          alert('요청성공');
+
+          console.log(result);
+        },
+        error: ()=>{
+          alert('요청실패');
+        }
+      });
+    }
+  
+    reqButton.addEventListener('click', getWeatherData);
+
+  
+  
+  
+  
+  
+  </script>
+</body>
+</html>

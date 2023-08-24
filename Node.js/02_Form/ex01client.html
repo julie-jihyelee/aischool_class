@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <form action="http://localhost:3333/" method="get">
+    <input type="text" 
+           name="userName"
+           placeholder="이름을 입력하세요">
+    <input type="text" name="mbti" placeholder="mbti를 입력해주세요">
+    <input type="submit" value="전송">
+  </form>
+
+  <!-- [get방식]
+  http://localhost:3333/?search=인공지능사관학교
+  http://localhost:3333/?id=zeti&pw=1234
+  
+  - 보안에 취약하다 
+  - url을이용하기 때문에 데이터의 길이 한계 256바이트 
+   ex) 사진 src주소 
+  
+  [POST방식]
+  - packet의 body 부분에 담아서 전송 <- 
+  - 보안에 강하다 
+  - 데이터의 길이에 제한 X  -->
+
+
+</body>
+</html>
+
