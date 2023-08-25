@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    공통된 공간은 평소 html을 사용하듯 마크업 언어 사용
+    변화할 공간은 : block content - endblock
+   -->
+
+   <h1>인공지능사관학교</h1>
+   <hr/>
+   <!-- 변화할 공간 -->
+   {% block content %}
+   <!-- 사용할 때 여기다 채우면 됨! -->
+   {% endblock %}
+
+   <hr/>
+   <p>인공지능사관학교, 사기 충전!</p>
+</body>
+</html>

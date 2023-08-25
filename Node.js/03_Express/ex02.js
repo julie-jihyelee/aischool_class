@@ -3,9 +3,16 @@
 const express = require('express')
 const app = express()
 const indexRouter = require('./routes/index')
-
+const nunjucks = require('nunjucks')
 // 클라이언트의 post request data를 추출하는 모듈
 const bodyParser = require('body-parser')
+
+// Nunjucks setting
+app.set('view engine', 'html')
+nunjucks.configure('views',{
+  express : app,
+  watch : true
+})
 
 // bodyParser 미들웨어
 app.use(bodyParser.urlencoded({extended : true}))
