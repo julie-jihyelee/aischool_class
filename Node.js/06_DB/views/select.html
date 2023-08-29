@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <hr/>
+  <h3>회원 검색</h3>
+  <br/>
+  <table class="table table-striped">
+    <tr>
+      <th>아이디</th>
+      <th>닉네임</th>
+    </tr>
+
+    {% for i in info %}    
+      <tr>
+        <td>{{i.ID}}</td>
+        <td>{{i.NICK}}</td>
+      </tr>
+    {% endfor %}
+
+  </table>
+{% endblock %}
