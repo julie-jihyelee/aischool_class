@@ -7,7 +7,7 @@ const conn = require('../config/database')
 // main page로 이동
 router.get('/',(req, res)=>{
   console.log('main Router')
-  res.render('main')
+  res.render('main', {nick:req.session.nick})
 })
 
 // join page로 이동
@@ -31,7 +31,7 @@ router.get('/select', (req,res)=>{
   // DB 연동
   conn.query(sql,(err, rows)=>{
     console.log('전체검색로직', rows)
-    res.render('select', {rows} )
+    res.render('select', {list : rows})
   }) 
   
 })
@@ -50,7 +50,12 @@ router.get('/delete', (req,res)=>{
   res.render('delete')
 })
 
-
+// 로그아웃
+router.get('/logout', (req,res)=>{
+  console.log('로그아웃합니다')
+  req.session.nick = '' ;
+  res.render('main')
+})
 
 
 

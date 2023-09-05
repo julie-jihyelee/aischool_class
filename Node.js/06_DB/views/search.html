@@ -1,7 +1,14 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-  <form></form>
-  <h3>회원을 검색하는 공간</h3>
-
+  <hr/>
+  <h3>회원 검색</h3>
+  <br/>
+  <form action="/user/selectOne" method="get" >
+    <div class="d-grid gap-2">
+      <input type="text" class="form-control"
+                  placeholder="User ID" aria-label="User ID" aria-describedby="basic-addon1" name="id">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+  </form>
 {% endblock %}

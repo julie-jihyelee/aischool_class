@@ -1,5 +1,23 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+  <hr/>
   <h3>회원탈퇴</h3>
+  <p style="color:gray ;">※ 정확한 탈퇴를 위해 아이디와 비밀번호를 입력해주세요.</p>
+  <br/>
+  <form action="/user/delete" method="post">
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">ID</span>
+      <input type="text" class="form-control" placeholder="UserID" aria-label="UserID" aria-describedby="basic-addon1" name="id">
+    </div>
+    <!-- id 중복확인 -->
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">PW</span>
+      <input type="password" class="form-control" placeholder="User PW" aria-label="User PW" aria-describedby="basic-addon1" name="pw">
+    </div>
+    <!-- pw 확인 -->
+    <div class="d-grid gap-2">
+      <button class="btn btn-primary" type="submit">회원탈퇴</button>
+    </div>
+  </form>
 {% endblock %}
