@@ -20,7 +20,7 @@ const Main = () => {
     // axios
     //   .get(newsUrl)
     //   .then(res => setArtArr(res.data.articles))
-    // 현재 문서의 요청값이 너무 많아서 키 값 무효화 상테 -> 나중에 확인해보세열!!
+    // 현재 문서의 요청값이 너무 많아서 키 값 무효화 상태 -> 나중에 확인해보세열!!
 
   }
 
